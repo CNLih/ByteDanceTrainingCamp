@@ -4,8 +4,7 @@ import androidx.databinding.DataBindingUtil;
 
 import com.bytedance.application.base.BaseInitActivity;
 import com.bytedance.application.bean.User;
-import com.example.application.R;
-import com.example.application.databinding.ActivityMainBinding;
+import com.bytedance.application.databinding.ActivityMainBinding;
 
 public class MainActivity extends BaseInitActivity<ActivityMainBinding> {
 

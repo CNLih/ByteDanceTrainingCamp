@@ -1,4 +1,4 @@
-package com.example.application;
+package com.bytedance.application;
 
 import org.junit.Test;
 

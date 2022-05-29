@@ -3,7 +3,7 @@ package com.bytedance.application.bean;
 import androidx.databinding.BaseObservable;
 import androidx.databinding.Bindable;
 
-import com.example.application.BR;
+import com.bytedance.application.BR;
 
 public class User extends BaseObservable {
     private String name;
