@@ -15,6 +15,13 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    buildFeatures{
+        // viewBinding 支持，
+        viewBinding = true
+        // dataBinding 支持
+        dataBinding = true
+    }
+
     buildTypes {
         release {
             minifyEnabled false
