@@ -13,6 +13,7 @@ import androidx.databinding.DataBindingUtil;
 import com.bytedance.application.R;
 import com.bytedance.application.base.BaseInitActivity;
 import com.bytedance.application.databinding.DataWidgetConfigureBinding;
+import com.bytedance.application.model.AppModel;
 
 /**
  * The configuration screen for the {@link DataWidget DataWidget} AppWidget.
@@ -39,6 +40,7 @@ public class DataWidgetConfigureActivity extends BaseInitActivity<DataWidgetConf
         resultValue.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, mAppWidgetId);
         setResult(RESULT_OK, resultValue);
         finish();
+
     };
 
     public DataWidgetConfigureActivity() {
