@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "com.example.hello.app-mergeDebugResources-23:/layout/content_main.xml",
+        "source": "com.example.hello.app-main-26:/layout/content_main.xml"
+    },
+    {
+        "merged": "com.example.hello.app-mergeDebugResources-23:/layout/fragment_second.xml",
+        "source": "com.example.hello.app-main-26:/layout/fragment_second.xml"
+    },
+    {
+        "merged": "com.example.hello.app-mergeDebugResources-23:/layout/fragment_first.xml",
+        "source": "com.example.hello.app-main-26:/layout/fragment_first.xml"
+    },
+    {
+        "merged": "com.example.hello.app-mergeDebugResources-23:/layout/activity_main.xml",
+        "source": "com.example.hello.app-main-26:/layout/activity_main.xml"
+    }
+]
