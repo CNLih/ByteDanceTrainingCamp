@@ -5,6 +5,7 @@ import androidx.databinding.Bindable;
 
 import com.bytedance.application.BR;
 
+
 public class User extends BaseObservable {
     private String name;
 

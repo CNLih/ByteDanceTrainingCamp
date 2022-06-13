@@ -1,4 +1,4 @@
-package com.bytedance.application.model.Dao;
+package com.bytedance.application.model.dao;
 
 import androidx.room.Dao;
 import androidx.room.Insert;

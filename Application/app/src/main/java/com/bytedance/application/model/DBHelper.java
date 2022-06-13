@@ -4,7 +4,8 @@ import android.content.Context;
 
 import androidx.room.Room;
 
-import com.bytedance.application.model.Dao.ChartDao;
+import com.bytedance.application.model.dao.ChartDao;
+import com.bytedance.application.model.dao.DataDao;
 
 public class DBHelper {
     private final static String DB_NAME = "nothing.db";
@@ -42,6 +43,13 @@ public class DBHelper {
     public ChartDao getChartDao(){
         if(mDatabase != null){
             return mDatabase.chartDao();
+        }
+        return null;
+    }
+
+    public DataDao getDataDao(){
+        if(mDatabase != null){
+            return mDatabase.dataDao();
         }
         return null;
     }
