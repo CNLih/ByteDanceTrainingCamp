@@ -3,6 +3,7 @@ package com.bytedance.application;
 import android.content.Intent;
 import android.net.Uri;
 import android.util.Log;
+import android.widget.TextView;
 
 import androidx.databinding.DataBindingUtil;
 
@@ -14,7 +15,6 @@ import com.bytedance.application.model.entity.ChartEntity;
 
 public class MainActivity extends BaseInitActivity<ActivityMainBinding> {
     private static final String TAG = "MAIN_ACTIVITY_TAG";
-
     @Override
     protected ActivityMainBinding getViewBinding() {
         return DataBindingUtil.setContentView(this, R.layout.activity_main);
@@ -25,7 +25,6 @@ public class MainActivity extends BaseInitActivity<ActivityMainBinding> {
         binding.setUser(new User("冲突测试"));
         binding.wvMini.loadUrl("weixin://dl/business/?t=QDZVQEO2z9f");
         AppModel.getInstance().init(this);
-
         binding.btSend.setOnClickListener(view -> {
             Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("weixin://dl/business/?t=QDZVQEO2z9f"));
             startActivity(intent);

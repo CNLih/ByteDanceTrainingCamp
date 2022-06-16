@@ -1,0 +1,30 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/Widget.Application.AppWidget.YueKangCode."
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:theme="@style/Theme.Application.AppWidgetContainer">
+    <TextView
+        android:id="@+id/appwidget_text2"
+        style="@style/Widget.Application.AppWidget.YueKangCode"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="@string/yuekangcode"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:textStyle="bold|italic"
+        android:drawableLeft="@drawable/two"/>
+    <TextView
+        android:id="@+id/appwidget_text1"
+        style="@style/Widget.Application.AppWidget.YueKangCode"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="@string/hesuancode"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:textStyle="bold|italic"
+        android:drawableLeft="@drawable/two"/>
+</LinearLayout>
