@@ -6,6 +6,9 @@ import android.content.SharedPreferences;
 import androidx.room.Room;
 
 import com.bytedance.application.model.entity.ChartEntity;
+import com.bytedance.application.model.entity.DataEntity;
+
+import java.util.List;
 
 public class AppModel {
     private Context mContext;
@@ -37,11 +40,13 @@ public class AppModel {
         PreferenceHelper.getInstance().setLocation(location);
     }
 
-    public int getData(){
-        return DBHelper.getInstance().getChartDao().loadChart().get(0).getData();
+    public List<DataEntity> getData(){
+        return DBHelper.getInstance().getDataDao().getAllData();
     }
 
-    public void setData(ChartEntity entity){
-        DBHelper.getInstance().getChartDao().insert(entity);
+    public void setData(List<DataEntity> list){
+        DBHelper.getInstance().getDataDao().insertAll(list);
     }
+
+
 }
