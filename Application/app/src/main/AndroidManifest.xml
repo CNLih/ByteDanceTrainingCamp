@@ -34,6 +34,16 @@
                 android:resource="@xml/info_widget_info" />
         </receiver>
         <receiver
+            android:name=".yuekangcode.YueKangCode"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/yue_kang_code_info" />
+        </receiver>
+        <receiver
             android:name=".datacharts.DataWidget"
             android:exported="false">
             <intent-filter>
@@ -53,7 +63,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.bytedance.application.MainActivity"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
