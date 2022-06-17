@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.bytedance.application">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -15,6 +15,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Application"
         tools:targetApi="31">
+
+        <service
+            android:name=".infolist.InfoRemoteViewsService"
+            android:permission="android.permission.BIND_REMOTEVIEWS"/>
+
+        <receiver
+            android:name=".infolist.InfoWidget"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="intent.action.item.CLICK"/>
+                <action android:name="intent.action.view.CLICK"/>
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/info_widget_info" />
+        </receiver>
         <receiver
             android:name=".datacharts.DataWidget"
             android:exported="false">
