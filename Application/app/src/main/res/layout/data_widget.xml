@@ -3,17 +3,51 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:theme="@style/Theme.Application.AppWidgetContainer">
-
     <TextView
-        android:id="@+id/appwidget_text"
+        android:id="@+id/text_widget_chart_city"
         style="@style/Widget.Application.AppWidget.InnerView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:layout_margin="8dp"
-        android:contentDescription="@string/appwidget_text"
-        android:text="@string/appwidget_text"
-        android:textSize="24sp"
-        android:textStyle="bold|italic" />
+        android:layout_alignEnd="@+id/linearLayout"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:text="广州市" />
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_below="@+id/text_widget_chart_city"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="新增确诊"
+            style="@style/Widget.Application.AppWidget.InnerView" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="新增确诊"
+            style="@style/Widget.Application.AppWidget.InnerView" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="新增确诊"
+            style="@style/Widget.Application.AppWidget.InnerView" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_toEndOf="@+id/text_widget_chart_city"
+        android:src="@drawable/chart_1" />
 </RelativeLayout>
