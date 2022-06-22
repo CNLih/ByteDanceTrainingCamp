@@ -6,4 +6,5 @@
     <string name="configure" translatable="false">Configure</string>
     <string name="add_widget" translatable="false">Add widget</string>
     <string name="app_widget_description" translatable="false">This is an app widget description</string>
+    <string name="chart_widget_description" translatable="true">This is an chart widget can show you the chart about the pandemic data.</string>
 </resources>

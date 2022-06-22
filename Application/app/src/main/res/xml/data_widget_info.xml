@@ -6,10 +6,11 @@
     android:initialLayout="@layout/data_widget"
     android:minWidth="250dp"
     android:minHeight="110dp"
-    android:previewImage="@drawable/example_appwidget_preview"
+    android:previewImage="@drawable/preview_chart_widget"
     android:previewLayout="@layout/data_widget"
-    android:resizeMode="vertical"
+    android:resizeMode="none"
     android:targetCellWidth="4"
     android:targetCellHeight="2"
     android:updatePeriodMillis="86400000"
-    android:widgetCategory="home_screen" />
+    android:widgetCategory="home_screen"
+    android:widgetFeatures="reconfigurable" />
