@@ -14,4 +14,16 @@
         <item name="android:background">?android:attr/colorBackground</item>
         <item name="android:textColor">?android:attr/textColorPrimary</item>
     </style>
+
+    <style name="Widget.Application.AppWidget.Title" parent="android:Widget.TextView">
+        <item name="android:textColor">@color/title_red</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Widget.Application.AppWidget.SubTitle" parent="android:Widget.TextView">
+        <item name="android:textColor">@color/title_green</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">italic</item>
+    </style>
 </resources>

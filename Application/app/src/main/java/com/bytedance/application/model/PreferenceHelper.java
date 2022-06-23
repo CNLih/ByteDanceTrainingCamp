@@ -9,7 +9,7 @@ public class PreferenceHelper {
     private static SharedPreferences sharedPreferences;
     private static SharedPreferences.Editor editor;
 
-    private static String SHARED_KEY_LOCATION = "shared_key_setting_location";
+    private static final String SHARED_KEY_LOCATION = "shared_key_setting_location";
 
     public PreferenceHelper(Context cxt) {
         sharedPreferences = cxt.getSharedPreferences(PREFERENCE_NAME, Context.MODE_PRIVATE);

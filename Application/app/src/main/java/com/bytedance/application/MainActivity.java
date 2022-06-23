@@ -1,13 +1,11 @@
 package com.bytedance.application;
 
-import android.content.Intent;
-import android.net.Uri;
 import android.util.Log;
 
 import androidx.databinding.DataBindingUtil;
 
 import com.bytedance.application.base.BaseInitActivity;
-import com.bytedance.application.bean.DataBean;
+import com.bytedance.application.bean.StatisticsBean;
 import com.bytedance.application.bean.User;
 import com.bytedance.application.databinding.ActivityMainBinding;
 import com.bytedance.application.model.AppModel;
@@ -40,14 +38,14 @@ public class MainActivity extends BaseInitActivity<ActivityMainBinding> {
         binding.setUser(new User("冲突测试"));
         binding.wvMini.loadUrl("weixin://dl/business/?t=QDZVQEO2z9f");
         AppModel.getInstance().init(this);
-        binding.btSend.setOnClickListener(view -> {
-            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("weixin://dl/business/?t=QDZVQEO2z9f"));
-            try {
-                startActivity(intent);
-            }catch (Exception e){
-                e.printStackTrace();
-            }
-        });
+//        binding.btSend.setOnClickListener(view -> {
+//            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("weixin://dl/business/?t=QDZVQEO2z9f"));
+//            try {
+//                startActivity(intent);
+//            }catch (Exception e){
+//                e.printStackTrace();
+//            }
+//        });
 
         DataApi dataApi = new Retrofit.Builder()
                 .baseUrl(AppUtils.QQ_NEWS_API)
@@ -58,35 +56,35 @@ public class MainActivity extends BaseInitActivity<ActivityMainBinding> {
 
         Log.d(TAG, "initViewsAndEvents: before");
         dataApi.getChinaInfo()
-                .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
                 .map(ResponseBody::string)
                 .map(JSONObject::new)
                 .map(jsonObject -> {
-                    List<DataBean> dataBeans = null;
+                    List<StatisticsBean> statisticsBeans = null;
                     try {
                         JSONObject data = jsonObject.getJSONObject("data").getJSONObject("diseaseh5Shelf");
                         JSONObject area = data.getJSONArray("areaTree").getJSONObject(0);
                         area.put("lastUpdateTime", data.getString("lastUpdateTime"));
-                        dataBeans = new ArrayList<>();
-                        dataBeans.add(DataBean.fromJson(area));
-                        dataBeans.addAll(dataBeans.get(0).getChildren());
+                        statisticsBeans = new ArrayList<>();
+                        statisticsBeans.add(StatisticsBean.fromJson(area));
+                        statisticsBeans.addAll(statisticsBeans.get(0).getChildren());
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
-                    return dataBeans;
+                    return statisticsBeans;
                 })
-                .subscribe(new Observer<List<DataBean>>() {
+                .subscribe(new Observer<List<StatisticsBean>>() {
                     @Override
                     public void onSubscribe(Disposable d) {
 
                     }
 
                     @Override
-                    public void onNext(List<DataBean> dataBeans) {
+                    public void onNext(List<StatisticsBean> statisticsBeans) {
                         List<DataEntity> list = new ArrayList<>();
-                        for(DataBean dataBean : dataBeans){
-                            list.add(new DataEntity(dataBean));
+                        for(StatisticsBean statisticsBean : statisticsBeans){
+                            list.add(new DataEntity(statisticsBean));
                         }
                         AppModel.getInstance().setData(list);
                     }

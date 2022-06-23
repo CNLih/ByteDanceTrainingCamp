@@ -4,15 +4,56 @@
     android:layout_height="match_parent"
     android:theme="@style/Theme.Application.AppWidgetContainer">
 
-    <Button
-        android:id="@+id/btn_test"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/ll_title"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="test"/>
+        android:layout_margin="3dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_title"
+                style="@style/Widget.Application.AppWidget.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/widget_info_title" />
+
+            <TextView
+                android:id="@+id/tv_time"
+                style="@style/Widget.Application.AppWidget.SubTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/widget_info_time_preview" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <ImageButton
+            android:id="@+id/btn_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_my_location_20"/>
+
+        <ImageButton
+            android:id="@+id/btn_refresh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_refresh_20"/>
+
+    </LinearLayout>
 
     <ListView
         android:id="@+id/appwidget_list"
         style="@style/Widget.Application.AppWidget.InnerView"
+        android:layout_below="@id/ll_title"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="3dp"/>

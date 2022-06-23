@@ -1,12 +1,10 @@
 package com.bytedance.application.model.entity;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.room.Entity;
-import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
-import com.bytedance.application.bean.DataBean;
+import com.bytedance.application.bean.StatisticsBean;
 
 @Entity(tableName = "data")
 public class DataEntity {
@@ -22,15 +20,14 @@ public class DataEntity {
     private int dead;
 
     public DataEntity(){
-
     }
 
-    public DataEntity(DataBean dataBean){
-        this.name = dataBean.getArea();
-        this.confirm = dataBean.getConfirm();
-        this.suspect = dataBean.getSuspect();
-        this.cure = dataBean.getCure();
-        this.dead = dataBean.getDead();
+    public DataEntity(StatisticsBean statisticsBean){
+        this.name = statisticsBean.getArea();
+        this.confirm = statisticsBean.getConfirm();
+        this.suspect = statisticsBean.getSuspect();
+        this.cure = statisticsBean.getCure();
+        this.dead = statisticsBean.getDead();
     }
 
     public String getName() {

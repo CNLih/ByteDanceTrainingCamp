@@ -5,7 +5,6 @@ import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 
-import com.bytedance.application.bean.DataBean;
 import com.bytedance.application.model.entity.DataEntity;
 
 import java.util.List;

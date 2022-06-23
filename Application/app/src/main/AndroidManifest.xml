@@ -15,18 +15,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Application"
         tools:targetApi="31">
+        <activity
+            android:name=".yuekangcode.NucleicCodeActivity"
+            android:exported="true" />
 
         <service
-            android:name=".infolist.InfoRemoteViewsService"
-            android:permission="android.permission.BIND_REMOTEVIEWS"/>
+            android:name=".newslist.NewsRemoteViewsService"
+            android:permission="android.permission.BIND_REMOTEVIEWS" />
 
         <receiver
-            android:name=".infolist.InfoWidget"
+            android:name=".newslist.NewsWidget"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-                <action android:name="intent.action.item.CLICK"/>
-                <action android:name="intent.action.view.CLICK"/>
+                <action android:name="intent.action.item.CLICK" />
+                <action android:name="intent.action.refresh.CLICK" />
+                <action android:name="intent.action.location.CLICK" />
             </intent-filter>
 
             <meta-data
@@ -38,7 +42,10 @@
             android:exported="false">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="intent.action.health.CLICK" />
+                <action android:name="intent.action.nucleic.CLICK" />
             </intent-filter>
+
             <meta-data
                 android:name="android.appwidget.provider"
                 android:resource="@xml/yue_kang_code_info" />
