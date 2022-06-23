@@ -8,4 +8,5 @@
     <string name="app_widget_description" translatable="false">This is an app widget description</string>
     <string name="widget_info_title">疫情新闻</string>
     <string name="widget_info_time_preview">1970年1月1日0点0分</string>
+    <string name="chart_widget_description" translatable="true">This is an chart widget can show you the chart about the pandemic data.</string>
 </resources>
