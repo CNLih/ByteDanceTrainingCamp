@@ -50,6 +50,7 @@ public class YueKangCode extends AppWidgetProvider {
         super.onReceive(context, intent);
 
         Intent uriIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(URL));
+        uriIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         String action = intent.getAction();
         if(action == null){
             return;

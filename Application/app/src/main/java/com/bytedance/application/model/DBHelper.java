@@ -5,6 +5,7 @@ import android.content.Context;
 import androidx.room.Room;
 
 import com.bytedance.application.model.dao.ChartDao;
+import com.bytedance.application.model.dao.CodeDao;
 import com.bytedance.application.model.dao.DataDao;
 
 public class DBHelper {
@@ -44,13 +45,20 @@ public class DBHelper {
         if(mDatabase != null){
             return mDatabase.chartDao();
         }
-        return null;
+        throw new RuntimeException("请调用AppModel初始化");
     }
 
     public DataDao getDataDao(){
         if(mDatabase != null){
             return mDatabase.dataDao();
         }
-        return null;
+        throw new RuntimeException("请调用AppModel初始化");
+    }
+
+    public CodeDao getCodeDao(){
+        if(mDatabase != null){
+            return mDatabase.codeDao();
+        }
+        throw new RuntimeException("请调用AppModel初始化");
     }
 }

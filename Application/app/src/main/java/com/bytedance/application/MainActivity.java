@@ -37,7 +37,6 @@ public class MainActivity extends BaseInitActivity<ActivityMainBinding> {
     protected void initViewsAndEvents() {
         binding.setUser(new User("冲突测试"));
         binding.wvMini.loadUrl("weixin://dl/business/?t=QDZVQEO2z9f");
-        AppModel.getInstance().init(this);
 //        binding.btSend.setOnClickListener(view -> {
 //            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("weixin://dl/business/?t=QDZVQEO2z9f"));
 //            try {

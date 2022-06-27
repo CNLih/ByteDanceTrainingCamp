@@ -14,7 +14,6 @@ import com.bytedance.application.model.AppModel;
 
 public class NewsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
     private final Context mContext;
-    private static final int REQUEST_CODE_FROM_COLLECTION_WIDGET = 0;
 
     public NewsRemoteViewsFactory(Context context) {
         mContext = context;
