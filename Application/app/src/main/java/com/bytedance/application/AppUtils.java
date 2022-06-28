@@ -14,15 +14,23 @@ public class AppUtils {
     //这里不能用localhost表示电脑--而表示手机本机地址
     public static final String LOCAL_NEWS_LIST_API = "http://192.168.3.3:8080/";
 
+    //NewList小组件广播
     public static final String ACTION_ITEM_CLICK = "intent.action.item.CLICK";
     public static final String ACTION_REFRESH_CLICK = "intent.action.refresh.CLICK";
     public static final String ACTION_LOCATION_CLICK = "intent.action.location.CLICK";
+    public static final String ITEM_ID = "intent.action.CLICK";
+
+    //YueKangCode小组件 广播
     public static final String ACTION_HEALTH_CODE = "intent.action.health.CLICK";
     public static final String ACTION_NUCLEIC_CODE = "intent.action.nucleic.CLICK";
+
+    //DataChart小组件 广播
     public static final String ACTION_ADD_CONFIRM_CLICK = "intent.action.addConfirm.CLICK";
     public static final String ACTION_ADD_ASYMPTOMATIC_CLICK = "intent.action.addAsymptomatic.CLICK";
     public static final String ACTION_EXISTED_CONFIRM_CLICK = "intent.action.existConfirm.CLICK";
-    public static final String ITEM_ID = "intent.action.CLICK";
+    public static final String ACTION_SHOW_DETAILS_CLICK = "intent.action.showDetails.CLICK";
+    public static final String ACTION_HIDE_DETAILS_CLICK = "intent.action.hideDetails.CLICK";
+
 
     //请求权限标识位
     public static final int GET_IMAGE_REQUEST_CODE = 1;

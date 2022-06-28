@@ -4,72 +4,88 @@
     android:layout_height="match_parent"
     android:theme="@style/Theme.Application.DataChartWidgetContainer">
 
-    <TextView
-        android:id="@+id/text_widget_chart_city"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_alignEnd="@+id/linearLayout"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:gravity="center"
-        android:text="广州市"
-        android:textColor="@android:color/primary_text_light"
-        android:textSize="15dp"
-        android:textStyle="bold" />
-
-    <LinearLayout
-        android:id="@+id/linearLayout"
+    <ImageView
+        android:id="@+id/iv_widget_chart_details"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_below="@+id/text_widget_chart_city"
-        android:layout_alignParentBottom="true"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/text_widget_chart_addConfirm"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:background="@drawable/background_chart_unselected"
-            android:gravity="center"
-            android:padding="8dp"
-            android:text="@string/chart_widget_addConfirm"
-            android:textColor="@android:color/primary_text_light"
-            android:textSize="12dp" />
-
-        <TextView
-            android:id="@+id/text_widget_chart_addAsymptomatic"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:background="@drawable/background_chart_unselected"
-            android:gravity="center"
-            android:padding="8dp"
-            android:text="@string/chart_widget_addCAsymptomatic"
-            android:textColor="@android:color/primary_text_light"
-            android:textSize="12dp" />
-
-        <TextView
-            android:id="@+id/text_widget_chart_existConfirm"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:background="@drawable/background_chart_unselected"
-            android:gravity="center"
-            android:padding="8dp"
-            android:text="@string/chart_widget_existConfirm"
-            android:textColor="@android:color/primary_text_light"
-            android:textSize="12dp" />
-
-    </LinearLayout>
-
-    <ImageView
-        android:id="@+id/iv_widget_chart_chart"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_toEndOf="@+id/text_widget_chart_city"
         android:adjustViewBounds="true"
-        android:src="@drawable/chart_1" />
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:id="@+id/widget_chart_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/text_widget_chart_city"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_alignEnd="@+id/linearLayout"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:gravity="center"
+            android:text="广州市"
+            android:textColor="@android:color/primary_text_light"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_below="@+id/text_widget_chart_city"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/text_widget_chart_addConfirm"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/background_chart_unselected"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="@string/chart_widget_addConfirm"
+                android:textColor="@android:color/primary_text_light"
+                android:textSize="12dp" />
+
+            <TextView
+                android:id="@+id/text_widget_chart_addAsymptomatic"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/background_chart_unselected"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="@string/chart_widget_addCAsymptomatic"
+                android:textColor="@android:color/primary_text_light"
+                android:textSize="12dp" />
+
+            <TextView
+                android:id="@+id/text_widget_chart_existConfirm"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/background_chart_unselected"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="@string/chart_widget_existConfirm"
+                android:textColor="@android:color/primary_text_light"
+                android:textSize="12dp" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/iv_widget_chart_chart"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_toEndOf="@+id/text_widget_chart_city"
+            android:adjustViewBounds="true"/>
+    </RelativeLayout>
 </RelativeLayout>

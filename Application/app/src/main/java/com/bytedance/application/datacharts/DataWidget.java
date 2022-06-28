@@ -19,7 +19,6 @@ import com.bytedance.application.R;
 public class DataWidget extends AppWidgetProvider {
     public static final String TAG = "DATA_CHART_CODE_TAG";
     private static RemoteViews views;
-    private static int onSelected;
 
     static void updateAppWidget(Context context, AppWidgetManager appWidgetManager,
                                 int appWidgetId) {
@@ -53,8 +52,25 @@ public class DataWidget extends AppWidgetProvider {
                 existConfirmIntent, PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
         views.setOnClickPendingIntent(R.id.text_widget_chart_existConfirm, ecPendingIntent);
 
-        views.setInt(R.id.text_widget_chart_addConfirm, "setBackgroundResource", R.drawable.background_chart_selected);
+        //按键监听：展示详情
+        Intent showDetailsIntent = new Intent(context, DataWidget.class);
+        showDetailsIntent.putExtra("appWidgetId", appWidgetId);
+        showDetailsIntent.setAction(AppUtils.ACTION_SHOW_DETAILS_CLICK);
+        PendingIntent sdPendingIntent = PendingIntent.getBroadcast(context, 0,
+                showDetailsIntent, PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
+        views.setOnClickPendingIntent(R.id.iv_widget_chart_chart, sdPendingIntent);
 
+        //按键监听：隐藏详情
+        Intent hideDetailsIntent = new Intent(context, DataWidget.class);
+        hideDetailsIntent.putExtra("appWidgetId", appWidgetId);
+        hideDetailsIntent.setAction(AppUtils.ACTION_HIDE_DETAILS_CLICK);
+        PendingIntent hdPendingIntent = PendingIntent.getBroadcast(context, 0,
+                hideDetailsIntent, PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
+        views.setOnClickPendingIntent(R.id.iv_widget_chart_details, hdPendingIntent);
+
+        views.setInt(R.id.text_widget_chart_addConfirm, "setBackgroundResource", R.drawable.background_chart_selected);
+        views.setImageViewResource(R.id.iv_widget_chart_chart, DataChartWorker.getAddConfirmChart());
+        views.setImageViewResource(R.id.iv_widget_chart_details, DataChartWorker.getAddConfirmChart());
         // Instruct the widget manager to update the widget
         appWidgetManager.updateAppWidget(appWidgetId, views);
     }
@@ -62,13 +78,14 @@ public class DataWidget extends AppWidgetProvider {
     @Override
     public void onReceive(Context context, Intent intent) {
         super.onReceive(context, intent);
+        AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(context);
 
         String action = intent.getAction();
         Log.d(TAG, "onReceive: " + action);
 
         int appWidgetId = intent.getIntExtra("appWidgetId", -1);
 
-        if (action == null || appWidgetId == -1)
+        if (action == null)
             return;
         switch (action) {
             case AppUtils.ACTION_ADD_CONFIRM_CLICK:
@@ -79,6 +96,16 @@ public class DataWidget extends AppWidgetProvider {
                 break;
             case AppUtils.ACTION_EXISTED_CONFIRM_CLICK:
                 onSelected(context, appWidgetId, 3);
+                break;
+            case AppUtils.ACTION_SHOW_DETAILS_CLICK:
+                views.setInt(R.id.iv_widget_chart_details, "setVisibility", 0);
+                views.setInt(R.id.widget_chart_background, "setVisibility", 8);
+                appWidgetManager.updateAppWidget(appWidgetId, views);
+                break;
+            case AppUtils.ACTION_HIDE_DETAILS_CLICK:
+                views.setInt(R.id.iv_widget_chart_details, "setVisibility", 8);
+                views.setInt(R.id.widget_chart_background, "setVisibility", 0);
+                appWidgetManager.updateAppWidget(appWidgetId, views);
                 break;
         }
     }
@@ -94,18 +121,21 @@ public class DataWidget extends AppWidgetProvider {
         switch (i) {
             case 1:
                 views.setImageViewResource(R.id.iv_widget_chart_chart, DataChartWorker.getAddConfirmChart());
+                views.setImageViewResource(R.id.iv_widget_chart_details, DataChartWorker.getAddConfirmChart());
                 views.setInt(R.id.text_widget_chart_addConfirm, "setBackgroundResource", R.drawable.background_chart_selected);
                 views.setInt(R.id.text_widget_chart_addAsymptomatic, "setBackgroundResource", R.drawable.background_chart_unselected);
                 views.setInt(R.id.text_widget_chart_existConfirm, "setBackgroundResource", R.drawable.background_chart_unselected);
                 break;
             case 2:
                 views.setImageViewResource(R.id.iv_widget_chart_chart, DataChartWorker.getAddAsymptomaticChart());
+                views.setImageViewResource(R.id.iv_widget_chart_details, DataChartWorker.getAddAsymptomaticChart());
                 views.setInt(R.id.text_widget_chart_addConfirm, "setBackgroundResource", R.drawable.background_chart_unselected);
                 views.setInt(R.id.text_widget_chart_addAsymptomatic, "setBackgroundResource", R.drawable.background_chart_selected);
                 views.setInt(R.id.text_widget_chart_existConfirm, "setBackgroundResource", R.drawable.background_chart_unselected);
                 break;
             case 3:
                 views.setImageViewResource(R.id.iv_widget_chart_chart, DataChartWorker.getExistConfirmChart());
+                views.setImageViewResource(R.id.iv_widget_chart_details, DataChartWorker.getExistConfirmChart());
                 views.setInt(R.id.text_widget_chart_addConfirm, "setBackgroundResource", R.drawable.background_chart_unselected);
                 views.setInt(R.id.text_widget_chart_addAsymptomatic, "setBackgroundResource", R.drawable.background_chart_unselected);
                 views.setInt(R.id.text_widget_chart_existConfirm, "setBackgroundResource", R.drawable.background_chart_selected);
