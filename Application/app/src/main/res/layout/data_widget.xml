@@ -27,32 +27,38 @@
 
         <TextView
             android:id="@+id/text_widget_chart_addConfirm"
-            style="@style/Widget.Application.AppWidget.DataChart.UnSelected"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
+            android:background="@drawable/background_chart_unselected"
             android:gravity="center"
+            android:padding="8dp"
             android:text="@string/chart_widget_addConfirm"
+            android:textColor="@android:color/primary_text_light"
             android:textSize="12dp" />
 
         <TextView
             android:id="@+id/text_widget_chart_addAsymptomatic"
-            style="@style/Widget.Application.AppWidget.DataChart.UnSelected"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_weight="1"
+            android:background="@drawable/background_chart_unselected"
             android:gravity="center"
+            android:padding="8dp"
             android:text="@string/chart_widget_addCAsymptomatic"
+            android:textColor="@android:color/primary_text_light"
             android:textSize="12dp" />
 
         <TextView
             android:id="@+id/text_widget_chart_existConfirm"
-            style="@style/Widget.Application.AppWidget.DataChart.UnSelected"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
+            android:background="@drawable/background_chart_unselected"
             android:gravity="center"
+            android:padding="8dp"
             android:text="@string/chart_widget_existConfirm"
+            android:textColor="@android:color/primary_text_light"
             android:textSize="12dp" />
 
     </LinearLayout>
