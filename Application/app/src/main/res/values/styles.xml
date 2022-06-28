@@ -5,14 +5,14 @@
         <item name="android:background">?android:attr/colorBackground</item>
     </style>
 
-    <style name="Widget.Application.AppWidget.DataChart" parent="android:Widget">
+    <style name="Widget.Application.AppWidget.DataChart.UnSelected" parent="android:Widget">
         <item name="android:id">@android:id/background</item>
         <item name="android:background">@color/white</item>
     </style>
 
     <style name="Widget.Application.AppWidget.DataChart.Selected" parent="android:Widget">
         <item name="android:id">@android:id/background</item>
-        <item name="android:background">@color/light_blue_200</item>
+        <item name="android:background">@color/light_blue_chart</item>
     </style>
 
     <style name="Widget.Application.AppWidget.YueKangCode." parent="android:Widget">

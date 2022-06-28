@@ -14,15 +14,15 @@
         <item name="android:clipToOutline">true</item>
     </style>
 
-    <style name="Widget.Application.AppWidget.DataChart" parent="android:Widget">
-        <item name="android:background">@color/light_blue_200</item>
+    <style name="Widget.Application.AppWidget.DataChart.UnSelected" parent="android:Widget">
+        <item name="android:background">@color/white</item>
         <item name="android:padding">8dp</item>
         <item name="android:textColor">?android:attr/textColorPrimary</item>
         <item name="android:clipToOutline">true</item>
     </style>
 
     <style name="Widget.Application.AppWidget.DataChart.Selected" parent="android:Widget">
-        <item name="android:background">@color/white</item>
+        <item name="android:background">@color/light_blue_chart</item>
         <item name="android:padding">8dp</item>
         <item name="android:textColor">?android:attr/textColorPrimary</item>
         <item name="android:clipToOutline">true</item>
