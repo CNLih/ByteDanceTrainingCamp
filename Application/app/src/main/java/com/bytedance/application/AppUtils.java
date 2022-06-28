@@ -11,6 +11,9 @@ public class AppUtils {
     public static final String ACTION_LOCATION_CLICK = "intent.action.location.CLICK";
     public static final String ACTION_HEALTH_CODE = "intent.action.health.CLICK";
     public static final String ACTION_NUCLEIC_CODE = "intent.action.nucleic.CLICK";
+    public static final String ACTION_ADD_CONFIRM_CLICK = "intent.action.addConfirm.CLICK";
+    public static final String ACTION_ADD_ASYMPTOMATIC_CLICK = "intent.action.addAsymptomatic.CLICK";
+    public static final String ACTION_EXISTED_CONFIRM_CLICK = "intent.action.existConfirm.CLICK";
     public static final String ITEM_ID = "intent.action.CLICK";
 
     //请求权限标识位

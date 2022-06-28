@@ -71,6 +71,9 @@
             android:exported="false">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
+                <action android:name="intent.action.addConfirm.CLICK" />
+                <action android:name="intent.action.addAsymptomatic.CLICK" />
+                <action android:name="intent.action.existConfirm.CLICK" />
             </intent-filter>
         </activity>
         <activity
