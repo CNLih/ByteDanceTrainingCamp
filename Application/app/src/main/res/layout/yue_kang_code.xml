@@ -1,31 +1,33 @@
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     style="@style/Widget.Application.AppWidget.Container"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:orientation="horizontal"
     android:gravity="center"
     android:theme="@style/Theme.Application.AppWidgetContainer">
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
         android:orientation="vertical"
         android:id="@+id/appwidget_check_code">
 
         <ImageView
             style="@style/Widget.Application.AppWidget.YueKangCode"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:src="@drawable/two" />
 
         <TextView
             style="@style/Widget.Application.AppWidget.YueKangCode"
-            android:layout_width="60dp"
-            android:layout_height="22dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:text="@string/yuekangcode"
             android:gravity="center_horizontal"
-            android:textSize="10sp"
+            android:textSize="11sp"
             android:textColor="#0A0B0A"
             android:textStyle="bold|italic"/>
 
@@ -33,27 +35,28 @@
     </LinearLayout>
 
     <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="1"
         android:id="@+id/appwidget_nucleic_code"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toEndOf="@+id/appwidget_check_code"
-        android:layout_marginLeft="4dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="4dp"
         android:orientation="vertical">
 
         <ImageView
             style="@style/Widget.Application.AppWidget.YueKangCode"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:src="@drawable/hesuan" />
 
         <TextView
             style="@style/Widget.Application.AppWidget.YueKangCode"
-            android:layout_width="60dp"
-            android:layout_height="22dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:text="@string/hesuancode"
             android:textColor="#0A0B0A"
-            android:textSize="10sp"
+            android:textSize="11sp"
             android:textStyle="bold|italic" />
     </LinearLayout>
-</RelativeLayout>
+</LinearLayout>

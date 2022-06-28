@@ -2,23 +2,35 @@ package com.bytedance.application.model;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.net.Uri;
 
-import androidx.room.Room;
-
-import com.bytedance.application.model.entity.ChartEntity;
+import com.bytedance.application.AppUtils;
+import com.bytedance.application.bean.NewsBean;
 import com.bytedance.application.model.entity.CodeEntity;
 import com.bytedance.application.model.entity.DataEntity;
+import com.bytedance.application.net.DataApi;
+import com.bytedance.application.net.NewsListApi;
+import com.google.gson.Gson;
 
-import java.util.ArrayList;
 import java.util.List;
+
+import io.reactivex.Observable;
+import io.reactivex.Observer;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.schedulers.Schedulers;
+import retrofit2.Retrofit;
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class AppModel {
     private Context mContext;
     
     private static AppModel mInstance;
-    private List<String> infoList;
+    private List<NewsBean> infoList;
     private List<CodeEntity> codeList;
+    private List<NewsBean> newsBeans;
+
+    NewsListApi newsInfoApi;
 
     public static AppModel getInstance(){
         if(mInstance == null){
@@ -35,7 +47,12 @@ public class AppModel {
         this.mContext = context;
         PreferenceHelper.init(context);
         DBHelper.init(context);
-
+        newsInfoApi = new Retrofit.Builder()
+                .baseUrl(AppUtils.LOCAL_NEWS_LIST_API)
+                .addConverterFactory(GsonConverterFactory.create())
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                .build()
+                .create(NewsListApi.class);
     }
 
     public String getLocation(){
@@ -54,17 +71,15 @@ public class AppModel {
         DBHelper.getInstance().getDataDao().insertAll(list);
     }
 
-    public List<String> getInfoList(){
+    public List<NewsBean> getInfoList(){
         if(infoList == null){
-            infoList = new ArrayList<String>(){{add("123");add("345");add("456");
-                add("123");add("345");add("456");
-                add("123");add("345");add("456");}};
+
         }
         return infoList;
     }
 
-    public void loadInfoData(){
-
+    public Observable<List<NewsBean>> loadNewsData(){
+        return newsInfoApi.getNewsList();
     }
 
     public int saveCode(String title, String uri) {
@@ -96,5 +111,21 @@ public class AppModel {
             codeList = DBHelper.getInstance().getCodeDao().getAllCode();
         }
         return codeList;
+    }
+
+    public int[] getWidgets(){
+        return PreferenceHelper.getInstance().getWidgets();
+    }
+
+    public void setWidgets(int[] widgets){
+        PreferenceHelper.getInstance().setWidgets(widgets);
+    }
+
+    public void setNewsList(List<NewsBean> newsBeans){
+        this.newsBeans = newsBeans;
+    }
+
+    public List<NewsBean> getNewsList(){
+        return newsBeans;
     }
 }
