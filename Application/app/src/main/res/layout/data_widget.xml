@@ -27,7 +27,7 @@
 
         <TextView
             android:id="@+id/text_widget_chart_addConfirm"
-            style="@style/Widget.Application.AppWidget.DataChart."
+            style="@style/Widget.Application.AppWidget.DataChart"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
@@ -37,7 +37,7 @@
 
         <TextView
             android:id="@+id/text_widget_chart_addAsymptomatic"
-            style="@style/Widget.Application.AppWidget.DataChart."
+            style="@style/Widget.Application.AppWidget.DataChart"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_weight="1"
@@ -47,7 +47,7 @@
 
         <TextView
             android:id="@+id/text_widget_chart_existConfirm"
-            style="@style/Widget.Application.AppWidget.DataChart."
+            style="@style/Widget.Application.AppWidget.DataChart"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
