@@ -5,8 +5,12 @@
         <item name="android:background">?android:attr/colorBackground</item>
     </style>
 
-    <style name="Widget.Application.AppWidget.YueKangCode." parent="android:Widget">
+    <style name="Widget.Application.AppWidget.DataChart" parent="android:Widget">
         <item name="android:id">@android:id/background</item>
+        <item name="android:background">@color/white</item>
+    </style>
+
+    <style name="Widget.Application.AppWidget.YueKangCode." parent="android:Widget">
         <item name="android:background">#FFFFFF</item>
     </style>
 

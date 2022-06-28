@@ -2,18 +2,20 @@
     style="@style/Widget.Application.AppWidget.Container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:theme="@style/Theme.Application.AppWidgetContainer">
+    android:theme="@style/Theme.Application.DataChartWidgetContainer">
+
     <TextView
         android:id="@+id/text_widget_chart_city"
-        style="@style/Widget.Application.AppWidget.InnerView"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_alignEnd="@+id/linearLayout"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:gravity="center"
-        android:textStyle="bold"
-        android:text="广州市" />
+        android:text="广州市"
+        android:textColor="@android:color/primary_text_light"
+        android:textSize="15dp"
+        android:textStyle="bold" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -25,37 +27,43 @@
 
         <TextView
             android:id="@+id/text_widget_chart_addConfirm"
-            style="@style/Widget.Application.AppWidget.InnerView"
-            android:layout_width="wrap_content"
+            style="@style/Widget.Application.AppWidget.DataChart."
+            android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:text="新增确诊" />
+            android:gravity="center"
+            android:text="@string/chart_widget_addConfirm"
+            android:textSize="12dp" />
 
         <TextView
             android:id="@+id/text_widget_chart_addAsymptomatic"
-            style="@style/Widget.Application.AppWidget.InnerView"
+            style="@style/Widget.Application.AppWidget.DataChart."
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:text="新增无症状" />
+            android:gravity="center"
+            android:text="@string/chart_widget_addCAsymptomatic"
+            android:textSize="12dp" />
 
         <TextView
             android:id="@+id/text_widget_chart_existConfirm"
-            style="@style/Widget.Application.AppWidget.InnerView"
-            android:layout_width="wrap_content"
+            style="@style/Widget.Application.AppWidget.DataChart."
+            android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:text="现存确诊" />
+            android:gravity="center"
+            android:text="@string/chart_widget_existConfirm"
+            android:textSize="12dp" />
 
     </LinearLayout>
 
     <ImageView
         android:id="@+id/iv_widget_chart_chart"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_alignParentTop="true"
+        android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_toEndOf="@+id/text_widget_chart_city"
+        android:adjustViewBounds="true"
         android:src="@drawable/chart_1" />
 </RelativeLayout>
