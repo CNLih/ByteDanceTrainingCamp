@@ -5,8 +5,8 @@
     <string name="yuekangcode" translatable="false">粤康码</string>
     <string name="hesuancode" translatable="false">核酸码</string>
 
-    <string name="configure" translatable="false">Configure</string>
-    <string name="add_widget" translatable="false">Add widget</string>
+    <string name="chart_configure" translatable="false">选择城市</string>
+    <string name="add_widget" translatable="false">添加组件</string>
     <string name="app_widget_description" translatable="false">This is an app widget description</string>
     <string name="widget_info_title">疫情新闻</string>
     <string name="widget_info_time_preview">1970年1月1日0点0分</string>

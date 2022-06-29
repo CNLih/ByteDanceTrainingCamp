@@ -39,6 +39,7 @@ public class DataWidgetConfigureActivity extends BaseInitActivity<DataWidgetConf
         Intent resultValue = new Intent();
         resultValue.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, mAppWidgetId);
         setResult(RESULT_OK, resultValue);
+        DataChartWorker.setCity(widgetText);
         finish();
 
     };

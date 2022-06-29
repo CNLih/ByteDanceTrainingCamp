@@ -16,7 +16,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:labelFor="@id/appwidget_text"
-            android:text="@string/configure" />
+            android:text="@string/chart_configure" />
 
         <EditText
             android:id="@+id/appwidget_text"
