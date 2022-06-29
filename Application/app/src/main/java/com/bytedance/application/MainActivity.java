@@ -35,20 +35,10 @@ public class MainActivity extends BaseInitActivity<ActivityMainBinding> {
 
     @Override
     protected void initViewsAndEvents() {
-        binding.setUser(new User("冲突测试"));
-        binding.wvMini.loadUrl("weixin://dl/business/?t=QDZVQEO2z9f");
-//        binding.btSend.setOnClickListener(view -> {
-//            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("weixin://dl/business/?t=QDZVQEO2z9f"));
-//            try {
-//                startActivity(intent);
-//            }catch (Exception e){
-//                e.printStackTrace();
-//            }
-//        });
+        binding.setUser(new User("请在桌面添加组件~"));
 
         DataApi dataApi = new Retrofit.Builder()
                 .baseUrl(AppUtils.QQ_NEWS_API)
-//                .addCallAdapterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build()
                 .create(DataApi.class);
