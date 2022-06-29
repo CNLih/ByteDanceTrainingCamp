@@ -12,15 +12,15 @@ public class DataChartWorker {
     }
 
     public static int getAddConfirmChart() {
-        return R.drawable.chart_1;
+        return R.drawable.chart_01;
     }
 
     public static int getAddAsymptomaticChart() {
-        return R.drawable.chart_1;
+        return R.drawable.chart_02;
     }
 
     public static int getExistConfirmChart() {
-        return R.drawable.chart_1;
+        return R.drawable.chart_03;
     }
 
     public static String getCity() {
